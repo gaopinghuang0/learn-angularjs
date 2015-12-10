@@ -17,9 +17,11 @@ angular.module('emailApp')
 				this.reply = function(message) {
 					EmailFactory.reply(message);
 				};
-				var getMessage = EmailFactory.getMessage($routeParams);
-				if (getMessage) {
-					getMessage.then(angular.bind(this, function(response) {
+				// cannot use getMessage as var, 
+				// otherwise overwrite the Factory method
+				var getmessage = EmailFactory.getMessage($routeParams);
+				if (getmessage) {
+					getmessage.then(angular.bind(this, function(response) {
 						EmailFactory.message = response;
 						this.message = EmailFactory.message;
 						$scope.$parent.email.title = this.message.subject;
@@ -27,12 +29,12 @@ angular.module('emailApp')
 				}
 			},
 			link: function(scope, element, attrs, ctrl) {
-				var textarea = element.find('.email__repsonse-text')[0];
+				var textarea = element.find('.email__response-text')[0];
 				scope.$watch('reply', function(newVal, oldVal) {
 					if (newVal === oldVal) return;
 					if (newVal) {
 						$timeout(function() {
-							textarea.focus;
+							textarea.focus();
 						}, 0);
 					}
 				})

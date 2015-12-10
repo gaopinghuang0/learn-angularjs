@@ -3,7 +3,7 @@
 */
 
 angular.module('emailApp')
-	.directive('inbox', function() {
+	.directive('inbox', function InboxDrctv() {
 		'use strict';
 
 		return {
