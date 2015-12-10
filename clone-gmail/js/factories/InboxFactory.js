@@ -3,7 +3,9 @@
 */
 
 angular.module('emailApp')
-	.factory('InboxFactory', function($q, $http, $location) {
+	.factory('InboxFactory', 
+		// give anonymous func a name to simplify debug
+		function InboxFactory($q, $http, $location) {  
 		'use strict';
 		var exports = {};
 
@@ -11,7 +13,8 @@ angular.module('emailApp')
 
 		exports.goToMessage = function(id) {
 			if (angular.isNumber(id)) {
-				// $location.path('inbox/email' + id);
+				console.log('inbox/email/' + id);
+				$location.path('inbox/email/' + id);
 			}
 		}
 
