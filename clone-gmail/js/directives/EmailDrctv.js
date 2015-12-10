@@ -24,7 +24,8 @@ angular.module('emailApp')
 					getmessage.then(angular.bind(this, function(response) {
 						EmailFactory.message = response;
 						this.message = EmailFactory.message;
-						$scope.$parent.email.title = this.message.subject;
+						// update the EmailCtrl scope title
+						$scope.$parent.emailTest.title = this.message.subject;
 					}));
 				}
 			},
