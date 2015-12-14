@@ -96,12 +96,6 @@ ol {
 /**
  * inbox
  */
-.inbox {
-
-}
-.inbox__list {
-
-}
 .inbox__list li {
   border-top: 1px solid #ccc;
   padding: 15px 0;
