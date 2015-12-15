@@ -1,0 +1,12 @@
+[
+  {
+    "dimension": "TicketFactory",
+    "values": ["value1", "value2", "value3"],
+    "id": 50223456
+  },
+  {
+    "dimension": "Color",
+    "values": ["value11", "value22", "value33"],
+    "id": 50223457
+  }
+]

@@ -1,0 +1,27 @@
+<div class="metric">
+  <h4>Think of metric to evaluate the list</h4>
+
+  <p>Lower left are some of the many <em>ways to use a brick</em> suggested by others.</p>
+  <p><strong>What are <u>some metrics/dimensions</u> you could think of, in order to evaluate this list?</strong></p>
+  <p>For example, "location of usage" is a valid metric/dimension.</p>
+  <p>Enter 4 metrics on the right. Each metric should be words or short phrases (less than 4 words).</p>
+  <div class="row">
+    <div class="col-xs-4 col-md-4">
+      <ol class="ideaWrapper">
+        <li ng-repeat="item in copyIdeaList">
+          {{item.text}}
+        </li>
+      </ol>
+    </div>
+    <div class="col-xs-4 col-md-4">
+      <div class="form-group">
+        <p>Enter 4 metrics/dimensions below.</p>
+        <ul class="value-wrap">
+          <li ng-repeat="item in valueList">
+            <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

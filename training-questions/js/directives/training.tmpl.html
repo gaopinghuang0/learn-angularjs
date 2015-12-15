@@ -1,0 +1,41 @@
+<div class="training">
+    <ul class="training__list list-unstyled">
+        <li ng-show="!training.questions.length" class="no-questions">
+            No training questions.
+        </li>
+        <li ng-repeat="question in training.questions">
+            <h4>{{ $index+1 }}. {{ training.title }}</h4>
+            <table class="training__info">
+                <tr>
+                    <td>Dimension</td>
+                    <td ng-bind="question.dimension"></td>
+                </tr>
+                <tr>
+                    <td>Values</td>
+                    <td>
+                        <span ng-repeat="val in question.values" class="training__info-val" ng-bind="val">
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <div class="training__options">
+                <div ng-repeat="option in training.options">
+
+                    <div class="training__options-option" >
+                        <label>
+                            <input type="checkbox" class="training__options-checkbox" name="" value="">
+                            <div class="training__options-option-text">
+                                <span ng-bind="option.text"></span>
+                                <div class="comment-area" ng-show="training.show">
+                                    <div class="comment-content alert alert-success">
+                                        <strong>Well done!</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
