@@ -9,22 +9,14 @@ angular.module('myApp')
 		'use strict';
 		var exports = {};
 
-		exports.messages = [];
+		exports.ideaList = [];
 
-		exports.checkQuestion = function(id) {
-			// 
-		}
-
-		exports.retake = function(id, index) {
-			
-		}
-
-		exports.getQuestions = function() {
+		exports.getIdeaList = function() {
 			var deferred = $q.defer();
 
-			$http.get('json/training.json')
+			$http.get('json/ideaList.json')
 				.success(function(data) {
-					exports.messages = data;
+					exports.ideaList = data;
 					deferred.resolve(data);
 				})
 				.error(function(data) {

@@ -2,18 +2,18 @@
   {
     "dimension": "Color",
     "values": ["value1", "value2", "value3"],
-    "id": 50223456,
+    "id": 50223458,
     "solutions": [
         {"id": "56", "reason": "Wrong because ..."},
         {"id": "57", "reason": "Wrong because ..."}
     ]
   },
   {
-    "dimension": "Color",
-    "values": ["value11", "value22", "value33"],
-    "id": 50223457,
+    "dimension": "location",
+    "values": ["indoors", "outdoors", "home"],
+    "id": 50223459,
     "solutions": [
-        {"id": "56", "reason": "Wrong because ..."}
+        {"id": "57", "reason": "Wrong because ..."}
     ]
   }
 ]
