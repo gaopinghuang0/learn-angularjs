@@ -4,22 +4,24 @@
 			No training questions.
 		</li>
 		<li ng-repeat="question in training.questions">
-			<h4>{{ $index+1 }}. {{ training.title }}</h4>
+			<h4>{{ $index+1 }}. Identify the violation against the above standards</h4>
+			<p>Below shows one metric and corresponding values for the topic "<strong><em ng-bind="question.topic"></em></strong>". (Check all that apply.) </p>
 			<table class="training__info">
 				<tr>
-					<td>Dimension</td>
+					<td>Metric</td>
 					<td ng-bind="question.dimension"></td>
 				</tr>
 				<tr>
 					<td>Values</td>
 					<td>
-						<span class="training__info-val" >
+						<!-- <span class="training__info-val" >
 							{{ question.values.join(', ') }}
-						</span>
+						</span> -->
+						<div ng-repeat="value in question.values">{{value}}</div>
 					</td>
 				</tr>
 			</table>
-			<div class="training__options" data-ques-id="{{ question.id }}">
+			<div class="training__options checkbox" data-ques-id="{{ question.id }}">
 				<div ng-repeat="option in training.options">
 
 					<div class="training__options-option" >

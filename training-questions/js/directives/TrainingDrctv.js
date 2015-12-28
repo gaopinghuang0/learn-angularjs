@@ -17,18 +17,15 @@ angular.module('myApp')
 				var self = this;
 				this.questions = [];
 				this.options = [];
-				this.title = "Identify the error";
 				$scope.show = false;
 				$scope.counter = 2;
 				$scope.actions = {
 					passTraining: function() {
-						console.log("init metric")
 						$scope.passTraining();
 					},
 					retake: function() {
 						$scope.postCheck = !$scope.postCheck;
-						console.log("retake")
-						TrainingFactory.retakeQuestion()
+						TrainingFactory.getQuestions($scope.counter)
 							.then(function() {
 								self.questions = TrainingFactory.questions;
 							})
@@ -36,7 +33,7 @@ angular.module('myApp')
 					}
 				};
 
-				TrainingFactory.getQuestions()
+				TrainingFactory.getQuestions($scope.counter)
 					.then(angular.bind(this, function then() {
 						this.questions = TrainingFactory.questions;
 					}));
@@ -49,7 +46,6 @@ angular.module('myApp')
 				this.checkQuestion = function(quesID, optionID, isChecked) {
 					var result = {_class: "", content: ""},
 						question, matched;
-
 
 					question = this.questions.filter(function(obj) {
 						return 'id' in obj && parseInt(obj.id) === parseInt(quesID);
@@ -102,7 +98,7 @@ angular.module('myApp')
 							result = ctrl.checkQuestion(quesID, optionID, isChecked);
 							isPassed = isPassed && result.pass;
 							// remove existing classes startsWith "alert"
-							switch_alert_class(comment, result._class);
+							scope.switchAlertClass(comment, result._class);
 							comment.html(result.content);
 						});
 					});
@@ -121,28 +117,20 @@ angular.module('myApp')
 					})
 				});
 
-				function switch_alert_class(obj, new_class) {
-					var classes = obj[0].className.split(" ").filter(function(ob) {
-						return !ob.startsWith("alert");
-					});
-					obj[0].className = classes.join(" ");
-					obj.addClass(new_class);
-				}
-
 				function update_action(isPassed, counter) {
 					var actObj = element.find(".training__actions-after"),
 						span = actObj.find("span"),
 						btn = actObj.find("#after_check");
 
 					if (isPassed) {
-						switch_alert_class(actObj, "alert alert-success");
+						scope.switchAlertClass(actObj, "alert alert-success");
 						span.html("<strong>You pass the training!</strong>");
 						btn.attr("value", "Start HIT");
 						scope.$apply(function() {
 							scope.action = scope.actions['passTraining'];
 						});
 					} else {
-						switch_alert_class(actObj, "alert alert-warning");
+						scope.switchAlertClass(actObj, "alert alert-warning");
 						span.html("<strong>You failed the training!</strong>" +
 							" You can retake <u>"+ counter +"</u> additional training.");
 						btn.attr("value", "Retake training");

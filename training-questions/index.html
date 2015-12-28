@@ -20,7 +20,12 @@
     }
     .training__info td {
       padding: 5px 10px;
-      border: 1px solid black;
+      /*border: 1px solid black;*/
+    }
+    .training__info tr td:first-child {
+      font-weight: bold;
+      text-align: right;
+      vertical-align: top;
     }
     
     .training__options {
@@ -61,43 +66,47 @@
 
       <!-- Instructions -->
       <div class="instruction-view">
-        <h3>Instructions</h3>
-        <p>Pass the training</p>
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Instructions</strong></div>
+          <div class="panel-body">
+            <ul>
+              <li>We are looking for some valid metrics to evaluate the given topic.</li>
+              
+              <li>The standards for a valid metric are as following:
+                <ol>
+                <li>Values should be the same level of detail.</li>
+                  <li>Values should comprehensive enough without overlapping</li>
+                  <li>Values should be high-level</li>
+                </ol>
+              </li>
+            </ul>
 
-<!--     <div class="panel panel-primary">
-      <div class="panel-heading"><strong>Instructions</strong></div>
-      <div class="panel-body">
-        <ol>
-          <li>Think of one question to categorize the list of <em>ways to use a brick</em>.</li>
-          <li>Categorize the list using your entered question.</li>
-        </ol>
-        
+          </div>
+        </div>
+        <!-- End Instructions --><!-- Content Body -->
+
       </div>
-    </div> -->
-    <!-- End Instructions --><!-- Content Body -->
 
-  </div>
-
-  <main class="main" ng-controller="MainCtrl">
-    <div class="certificate-view"></div>
-    <div class="training-view">
-      <training></training>
+      <main class="main" ng-controller="MainCtrl">
+        <div class="certificate-view"></div>
+        <div class="training-view">
+          <training></training>
+        </div>
+        <div class="metric-view" style="display:none; opacity: 0;">
+          <metric></metric>
+        </div>
+      </main>
     </div>
-    <div class="metric-view" style="display:none; opacity: 0;">
-      <metric></metric>
-    </div>
-  </main>
-</div>
 
-</section>
+  </section>
 
-<!-- Application Files -->
-<script src="js/app.js"></script> 
-<script src="js/controllers/MainCtrl.js"></script>  
-<script src="js/factories/MetricFactory.js"></script>  
-<script src="js/factories/TrainingFactory.js"></script>  
-<script src="js/directives/MetricDrctv.js"></script> 
-<script src="js/directives/TrainingDrctv.js"></script>
+  <!-- Application Files -->
+  <script src="js/app.js"></script> 
+  <script src="js/controllers/MainCtrl.js"></script>  
+  <script src="js/factories/MetricFactory.js"></script>  
+  <script src="js/factories/TrainingFactory.js"></script>  
+  <script src="js/directives/MetricDrctv.js"></script> 
+  <script src="js/directives/TrainingDrctv.js"></script>
 
 </body>
 </html>

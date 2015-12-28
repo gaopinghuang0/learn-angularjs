@@ -1,19 +1,29 @@
 [
   {
-    "dimension": "Color",
-    "values": ["value1", "value2", "value3"],
-    "id": 50223458,
+    "topic": "ways to use magnifying glass",
+    "dimension": "color",
+    "values": ["red", "green"],
+    "id": 50223456,
     "solutions": [
-        {"id": "56", "reason": "Wrong because ..."},
-        {"id": "57", "reason": "Wrong because ..."}
+        {"id": "2", "reason": "Wrong because ..."}
     ]
   },
   {
-    "dimension": "location",
-    "values": ["indoors", "outdoors", "home"],
-    "id": 50223459,
+    "topic": "short basis for a fairy tale",
+    "dimension": "species of animal characters",
+    "values": ["vertebrates", "invertebrates", "inserts", "fish"],
+    "id": 50223457,
     "solutions": [
-        {"id": "57", "reason": "Wrong because ..."}
+        {"id": "3", "reason": "Wrong because ..."}
+    ]
+  },
+  {
+    "topic": "party activities",
+    "dimension": "duration of activity",
+    "values": ["30 mins", "3 hours", "5 hours"],
+    "id": 50223458,
+    "solutions": [
+        {"id": "1", "reason": "Wrong because ..."}
     ]
   }
 ]

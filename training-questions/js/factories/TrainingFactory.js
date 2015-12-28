@@ -12,14 +12,20 @@ angular.module('myApp')
 		exports.questions = [];
 		exports.options = [];
 
-		exports.checkQuestion = function(id) {
-			// 
-		}
+		exports.getQuestions = function(counter) {
+			var deferred = $q.defer(),
+				url;
 
-		exports.retakeQuestion = function(id, index) {
-			var deferred = $q.defer();
+			if (counter === 2) {
+				url = 'json/training.json';
+			} else if (counter === 1) {
+				url = 'json/training2.json';
+			} else {
+				url = 'json/training3.json';
+			}
+			console.log(counter)
 
-			$http.get('json/training2.json')
+			$http.get(url)
 				.success(function(data) {
 					exports.questions = data;
 					deferred.resolve(data);
@@ -30,21 +36,6 @@ angular.module('myApp')
 				});
 			return deferred.promise;
 		}
-
-		exports.getQuestions = function() {
-			var deferred = $q.defer();
-
-			$http.get('json/training.json')
-				.success(function(data) {
-					exports.questions = data;
-					deferred.resolve(data);
-				})
-				.error(function(data) {
-					console.log('There was an error!', data)
-					deferred.reject(data);
-				});
-			return deferred.promise;
-		};
 
 		exports.getOptions = function() {
 			var deferred = $q.defer();
