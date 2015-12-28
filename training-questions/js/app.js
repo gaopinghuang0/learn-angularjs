@@ -1,6 +1,6 @@
 (function() {
 
-angular.module("myApp", ['ngRoute'])
+angular.module("myApp", [])
 	.config(['$interpolateProvider', 
 	function($interpolateProvider) {
 	$interpolateProvider.startSymbol("{[");

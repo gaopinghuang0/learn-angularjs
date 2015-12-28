@@ -19,10 +19,11 @@ angular.module('myApp')
 				this.options = [];
 				this.title = "Identify the error";
 				$scope.show = false;
+				$scope.counter = 2;
 				$scope.actions = {
-					initMetric: function() {
+					passTraining: function() {
 						console.log("init metric")
-						$scope.initMetric();
+						$scope.passTraining();
 					},
 					retake: function() {
 						$scope.postCheck = !$scope.postCheck;
@@ -84,7 +85,6 @@ angular.module('myApp')
 
 					return result;
 				}
-
 			},
 			link: function(scope, element, attrs, ctrl) {
 				element.find("#check_answer").bind("click", function() {
@@ -107,10 +107,17 @@ angular.module('myApp')
 						});
 					});
 
-					update_action(isPassed);
+					update_action(isPassed, scope.counter);
 
 					scope.$apply(function() {
 						scope.show = true;
+						if (!isPassed) {
+							if (scope.counter < 1) {
+								scope.failTraining();
+							} else {
+								scope.counter -= 1;
+							}
+						}
 					})
 				});
 
@@ -122,7 +129,7 @@ angular.module('myApp')
 					obj.addClass(new_class);
 				}
 
-				function update_action(isPassed) {
+				function update_action(isPassed, counter) {
 					var actObj = element.find(".training__actions-after"),
 						span = actObj.find("span"),
 						btn = actObj.find("#after_check");
@@ -132,12 +139,12 @@ angular.module('myApp')
 						span.html("<strong>You pass the training!</strong>");
 						btn.attr("value", "Start HIT");
 						scope.$apply(function() {
-							scope.action = scope.actions['initMetric'];
+							scope.action = scope.actions['passTraining'];
 						});
 					} else {
 						switch_alert_class(actObj, "alert alert-warning");
 						span.html("<strong>You failed the training!</strong>" +
-							" You can retake <u>one</u> additional training.");
+							" You can retake <u>"+ counter +"</u> additional training.");
 						btn.attr("value", "Retake training");
 						scope.$apply(function() {
 							scope.action = scope.actions['retake'];
