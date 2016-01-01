@@ -1,18 +1,18 @@
 [
   {
-    "text": "The values are not high-level (i.e. too fine grained)",
+    "text": "Values are high-level.",
     "id": 1
   },
   {
-    "text": "The values are incomplete or with overlapping",
+    "text": "Values are not overlapping (i.e.,only one could apply to any list itmes.)",
     "id": 2
   },
   {
-    "text": "The values are not with the same level of detail.",
+    "text": "Values are at the same level of detail.",
     "id": 3
   },
   {
-    "text": "The dimension itself is not a valid dimension",
+    "text": "Dimension could be applied to most list items.",
     "id": 4
   }
 ]

@@ -14,14 +14,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
   <style type="text/css">
-  dl {
-    margin-top: 5px;
-    margin-bottom: 10px;
-  }
-  .panel-body p {
-    margin: 5px 0 0;
-  }
-  .progress-table td {
+    dl {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    .panel-body p {
+      margin: 5px 0 0;
+    }
+    .progress-table td {
       padding: 0 10px 0 20px;
     }
     .progress-table tr td:last-child {
@@ -30,13 +30,34 @@
     .current-progress {
       color: #32CD32 !important;
     }
-/*    .training__info {
-      border-collapse: collapse;
-    }*/
+
+
+    /* training */
+
     .training-view {
-      border: 1px solid grey;
+      border: 1px solid #DCDCDC;
       background-color: #F0FFF0;
       border-radius: 3px;
+      margin-bottom: 20px;
+    }
+    #toggle-tutorial {
+      float: left;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: -30px;
+    }
+    .fine-print {
+      font-size: 12px;
+      cursor: help;
+    }
+
+    .training-header,.training-body {
+      margin-left: 30px;
+      padding-right: 10px;
+    }
+    .training__list li {
+      padding-top: 5px;
+      border-bottom: 1px solid #dcdcdc;
     }
     .training__info td {
       padding: 5px 10px;
@@ -47,12 +68,24 @@
       vertical-align: top;
     }
     
-    .training__options {
-      margin-top: 10px;
-    }
-    .training__options-option label {
+    .training__options-radio {
       cursor: pointer;
+      float: left;
+      margin-right: 4px !important;
+      /*margin: 0 !important;*/
     }
+    .training__options-mark span {
+      margin-right: 6px;
+    }
+    .mark-correct {
+      color: blue;
+    }
+    .mark-wrong {
+      color: red;
+    }
+
+
+    /* metric */
 
     .ideaWrapper {
       padding-left: 30px;
@@ -88,28 +121,28 @@
         <div class="panel panel-default">
           <div class="panel-heading"></div>
           <div class="panel-body">
-          <p>We have been creating a huge list of the following:</p>
-          <dl class="dl-horizontal">
-            <dt>List topic:</dt>
-            <dd>activities to do on a rainy day</dd>
-          </dl>
-          <p>Before you begin, it might help to understand a bit about our process. There are three steps:</p>
-          <table class="progress-table">
-            <tr>
-              <td>1. Enter list items. </td>
-              <td>&lt;&lt;&lt;&lt;&lt;&lt; other workers already did this</td>
-            </tr>
-            <tr>
-              <td>2. Think of some ways we could categorize the list items.</td>
-              <td class="current-progress">&lt;&lt;&lt;&lt;&lt;&lt; YOUR JOB</td>
-            </tr>
-            <tr>
-              <td>3. Categorize the list items. </td>
-              <td>&lt;&lt;&lt;&lt;&lt;&lt; future workers</td>
-            </tr>
-          </table>
-  
-          <p>Your job in this HIT is to think of some dimensions and values that could be used to categorize items in the list. Some sample list items will be shown (below the mini-tutorial).</p>
+            <p>We have been creating a huge list of the following:</p>
+            <dl class="dl-horizontal">
+              <dt>List topic:</dt>
+              <dd>activities to do on a rainy day</dd>
+            </dl>
+            <p>Before you begin, it might help to understand a bit about our process. There are three steps:</p>
+            <table class="progress-table">
+              <tr>
+                <td>1. Enter list items. </td>
+                <td>&lt;&lt;&lt;&lt;&lt;&lt; other workers already did this</td>
+              </tr>
+              <tr>
+                <td>2. Think of some ways we could categorize the list items.</td>
+                <td class="current-progress">&lt;&lt;&lt;&lt;&lt;&lt; YOUR JOB</td>
+              </tr>
+              <tr>
+                <td>3. Categorize the list items. </td>
+                <td>&lt;&lt;&lt;&lt;&lt;&lt; future workers</td>
+              </tr>
+            </table>
+
+            <p>Your job in this HIT is to think of some dimensions and values that could be used to categorize items in the list. Some sample list items will be shown (below the mini-tutorial).</p>
 
 
           </div>
@@ -122,7 +155,7 @@
         <div class="training-view">
           <training></training>
         </div>
-        <div class="metric-view" style="display:none; opacity: 0;">
+        <div class="metric-view">
           <metric></metric>
         </div>
       </main>

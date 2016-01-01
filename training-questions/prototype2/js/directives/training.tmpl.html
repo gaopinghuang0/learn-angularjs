@@ -1,58 +1,65 @@
 <div class="training">
-	<ul class="training__list list-unstyled">
-		<li ng-show="!training.questions.length" class="no-questions">
-			No training questions.
-		</li>
-		<li ng-repeat="question in training.questions">
-			<!-- <h4>{{ $index+1 }}. Identify the violation against the above standards</h4> -->
-			<!-- <p>{{ $index+1 }}. Below shows one metric and corresponding values for the topic "<strong><em ng-bind="question.topic"></em></strong>". (Check all that apply.) </p> -->
-			<table class="training__info">
-			<tr>
-				<td>List Topic</td>
-				<td ng-bind="question.topic"></td>
-			</tr>
-				<tr>
-					<td>Dimension</td>
-					<td ng-bind="question.dimension"></td>
-				</tr>
-				<tr>
-					<td>Values</td>
-					<td>
-						<span style="display:inline-block; border:1px solid black; padding: 0px 10px;" ng-repeat="value in question.values">
-							{{ value }}
-						</span>
-						<!-- <span  class="training__info-val" > -->
-							<!-- {[ question.values.join(', ') ]} -->
-						<!-- </span> -->
-						<!-- <div ng-repeat="value in question.values">{{value}}</div> -->
-					</td>
-				</tr>
-			</table>
-			<div class="training__options checkbox" data-ques-id="{{ question.id }}">
-				<div ng-repeat="option in training.options">
-
-					<div class="training__options-option" >
-						<label>
-							<input type="checkbox" class="training__options-checkbox" name="" value="" data-option-id="{{ option.id }}">{{ $index + 1}}.
-							<span ng-bind="option.text"></span>
-							<div class="training__options-option-text">
-								<div class="comment-area" ng-show="show">
-									<div class="comment-content alert">
+	<div class="training-header">
+		<h4><span id="toggle-tutorial" data-status="show" title="toggle tutorial content" data-toggle="tooltip">[&ndash;]</span> mini-tutorial (paid, +$1.00 <span class="fine-print" data-toggle="tooltip" title="We expect most (if not all) workers to pass the tutorial quiz.  In that case, you will be paid the $# base reward plus a bonus of $#.  If you do not pass, you will still receive the $# base reward in appreciation for your effort (but no bonus).">[?]</span>)</h4>
+	</div>
+	<div class="training-body">
+		<p>Since this is your first time doing this task, you will start by completing a short, paid tutorial to ensure that you understand the instructions.  You will receive an extra $1.00 for doing this.  You may wish to scroll down and see your task before you begin the tutorial.</p>
+		<p>Below are some possible dimensions and values for other list topics.  Many of these are incorrect.  For this tutorial, you will evaluate whether each response meets the criteria shown.  Select <span class="mark-correct">&#10004;</span> if the criteria is met, or <span class="mark-wrong">&#10008;</span> if it is violated.</p>
+		<ul class="training__list list-unstyled">
+			<li ng-show="!training.questions.length" class="no-questions">
+				No training questions.
+			</li>
+			<li ng-repeat="question in training.questions">
+				<strong>Sample response #{{$index + 1}}</strong>
+				<table class="training__info">
+					<tr>
+						<td>List Topic:</td>
+						<td ng-bind="question.topic"></td>
+					</tr>
+					<tr>
+						<td>Dimension:</td>
+						<td ng-bind="question.dimension"></td>
+						<!-- <td><input type="text" readonly ng-model="question.dimension"></td> -->
+					</tr>
+					<tr>
+						<td>Values:</td>
+						<td>
+							<span style="display:inline-block; border:1px solid black; padding: 0px 10px;" ng-repeat="value in question.values">
+								{{ value }}
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Criteria:</td>
+						<td>
+							<div class="training__options" data-ques-id="{{ question.id }}">
+								<div class="training__options-mark"><span class="mark-correct">&#10004;</span><span class="mark-wrong">&#10008;</span></div>
+								<div ng-repeat="option in training.options">
+									<div class="training__options-option" >
+										<input type="radio" class="training__options-radio" name="question-{{question.id}}-option-{{option.id}}" value="true" data-option-id="{{ option.id }}">
+										<input type="radio" class="training__options-radio" name="question-{{question.id}}-option-{{option.id}}" value="false" data-option-id="{{ option.id }}">
+										<span ng-bind="option.text"></span>
+										<div class="training__options-option-text">
+											<div class="comment-area" ng-show="show">
+												<div class="comment-content alert"></div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</label>
-					</div>
-				</div>
+						</td>
+					</tr>
+				</table>
+			</li>
+		</ul>
+		<div class="training__actions">
+			<input type="button" name="check_answer" id="check_answer" value="Submit your answer" ng-hide="postCheck" ng-click="postCheck = !postCheck">
+			<!-- After check, show corresponding actions -->
+			<div class="training__actions-after" ng-show="postCheck">
+				<span></span>
+				<input type="button" id="after_check" value="" ng-click="action()">
 			</div>
-		</li>
-	</ul>
-	<div class="training__actions">
-		<input type="button" name="check_answer" id="check_answer" value="Submit your answer" ng-hide="postCheck" ng-click="postCheck = !postCheck">
-		<!-- After check, show corresponding actions -->
-		<div class="training__actions-after" ng-show="postCheck">
-			<span></span>
-			<input type="button" id="after_check" value="" ng-click="action()">
 		</div>
 	</div>
+	
 </div>

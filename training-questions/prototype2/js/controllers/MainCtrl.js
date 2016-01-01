@@ -113,4 +113,5 @@ angular.module('myApp')
 			obj.addClass(new_class);
 		}
 
+		
 	});

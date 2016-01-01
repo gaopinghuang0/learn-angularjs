@@ -117,6 +117,21 @@ angular.module('myApp')
 					})
 				});
 
+				element.find('#toggle-tutorial').bind('click', function() {
+					// change view of button
+					var target = $(this),
+						status = target.attr('data-status'),
+						newHtml = status === 'show' ? '[+]' : '[&ndash;]',
+						newStatus = status === 'show' ? 'hide' : 'show';
+
+					target.html(newHtml).attr('data-status', newStatus);
+					// toggle tutorial body
+					element.find('.training-body').toggle();
+				});
+
+				// init tooltip
+				$('[data-toggle="tooltip"]').tooltip(); 
+
 				function update_action(isPassed, counter) {
 					var actObj = element.find(".training__actions-after"),
 						span = actObj.find("span"),
