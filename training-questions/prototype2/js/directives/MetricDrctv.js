@@ -15,10 +15,11 @@
 			scope: true,
 			templateUrl: 'js/directives/metric.tmpl.html',
 			controllerAs: 'metric',
-			controller: function($scope, MetricFactory) {
+			controller: function($scope, MetricFactory, TrainingFactory) {
 				var self = this;
 				this.valueList = [];
 				this.ideaList = [];
+				this.options = [];
 
 				this.initList = function(n) {
 					for (var i=0; i<n; i++) {
@@ -41,6 +42,11 @@
 						item.valid = true;
 					}
 				};
+
+				TrainingFactory.getOptions()
+					.then(angular.bind(this, function then() {
+						this.options = TrainingFactory.options;
+					}));
 			},
 			link: function() {
 

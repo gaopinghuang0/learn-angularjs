@@ -1,51 +1,75 @@
 <div class="metric">
-  <ol>
-    <li>Values should be high-level</li>
-    <li>Values should comprehensive enough without overlapping</li>
-    <li>Values should be the same level of detail.</li>
-    <li>Dimension should be the name of an attribute that could be used to classify items in the list.</li>
-  </ol>
+  <h4><strong>Main task:</strong> Now it's your turn. Remember to follow the following criteria:</h4>
 
-  <h4>PartA: Think of metric to evaluate the list</h4>
+  <ul>
+    <li ng-repeat="option in metric.options">
+      {{option.text}}
+    </li>
+  </ul>
 
-  <p>Lower left are some of the many <em>ways to use a brick</em> suggested by others.</p>
-  <p><strong>What are <u>some metrics/dimensions</u> you could think of, in order to evaluate this list?</strong></p>
-  <p>For example, "location of usage" is a valid metric/dimension.</p>
-  <p>Enter 4 metrics on the right. Each metric should be words or short phrases (less than 4 words).</p>
+  <p>Lower left are some sample list items for the given list topic.</p>
+  <p>Enter 3 dimensions and corresponding values on the right. Each input should be concise (less than 4 words).</p>
   <div class="row">
-    <div class="col-xs-4 col-md-4">
-      <ol class="ideaWrapper">
-        <li ng-repeat="item in metric.ideaList">
+    <div class="col-xs-3 col-md-3 ideaWrapper">
+      <div class="middle-header">Sample list items</div>
+      <ol class="list-group">
+        <li ng-repeat="item in metric.ideaList" class="list-group-item">
           {{item.text}}
         </li>
       </ol>
     </div>
-    <div class="col-xs-4 col-md-4">
+    <div class="col-xs-9 col-md-9">
       <div class="form-group">
-        <p>Enter 4 metrics/dimensions below.</p>
-        <ul class="value-wrap">
-          <li ng-repeat="item in metric.valueList">
-            <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="metric.evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <h4>Part B: Elaborate your entered metrics</h4>
-
-  <p>Below are all of your metrics. Please <strong>elaborate</strong> the metric you've entered, namely, <strong>providing all possible values</strong> for each metric, in order to use your metric to evaluate the list.</p>
-  <p>For example, values for metric "location of usage" could be "indoors", "outdoors", "underground" and "outerspace". Although some values may not appear in the above list, you should provide all of them in order to make your metric robust.</p>
-  <p>Enter all the possible values for each metric (2 to 6). Each value should be words or short phrases (no more than 4 words), not any specific list item.</p> 
-  <div class="content">
-    <div class="row" ng-repeat="item in metric.valueList">
-      <div class="metric-wrap">
-      <div class="sub-header col-xs-12 col-md-12">Metric: <strong>{{item.value}}</strong>
+        <ul class="value-wrap list-unstyled">
+          <li>
+            <table class="metric__info">
+              <tr>
+                <td>List topic:</td>
+                <td>Ways to use a brick</td>
+              </tr>
+            </table>
+<!--           <div class="col-xs-2 col-md-2">List topic:</div>
+  <div class="col-xs-10 col-md-10">Ways to use a brick</div> -->
+</li>
+<li ng-repeat="item in metric.valueList">
+<!--               <div class="col-xs-2 col-md-2">Dimension #{{$index + 1}}:</div>
+              <div class="col-xs-10 col-md-10">
+                <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="metric.evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
+              </div>
+              <div class="col-xs-2 col-md-2">Values:</div>
+              <div class="col-xs-10 col-md-10">
+                dfadf -->
+<!--                 <div class="value-group">
+                  <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" ng-repeat="x in [] | range: 3">
+                </div>
+                <div class="value-group">
+                  <input type="text" name="{{item.value | replaceSpace}}-{{3+x}}" ng-repeat="x in [] | range: 3">
+                </div> -->
+                <!-- </div> -->
+                <table class="metric__info">
+                  <tr>
+                    <td>Dimension #{{$index + 1}}:</td>
+                    <td>
+                      <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="metric.evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Values:</td>
+                    <td>
+                      <!-- <div class="value-item" ng-repeat="x in [] | range: 6"> -->
+                      <div>
+                        <!-- <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}"> -->
+                        <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" ng-repeat="x in [] | range: 3"> 
+                        <br>
+                        <input type="text" name="{{item.value | replaceSpace}}-{{3+x}}" ng-repeat="x in [] | range: 3">
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="col-xs-2 col-md-2" ng-repeat="x in [] | range: 6">
-        <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" style="width: 100%;">
-        </div>
       </div>
+
     </div>
-  </div>
-</div>
