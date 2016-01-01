@@ -19,55 +19,30 @@
       </ol>
     </div>
     <div class="col-xs-9 col-md-9">
-      <div class="form-group">
-        <ul class="value-wrap list-unstyled">
-          <li>
-            <table class="metric__info">
-              <tr>
-                <td>List topic:</td>
-                <td>Ways to use a brick</td>
-              </tr>
-            </table>
-<!--           <div class="col-xs-2 col-md-2">List topic:</div>
-  <div class="col-xs-10 col-md-10">Ways to use a brick</div> -->
-</li>
-<li ng-repeat="item in metric.valueList">
-<!--               <div class="col-xs-2 col-md-2">Dimension #{{$index + 1}}:</div>
-              <div class="col-xs-10 col-md-10">
-                <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="metric.evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
-              </div>
-              <div class="col-xs-2 col-md-2">Values:</div>
-              <div class="col-xs-10 col-md-10">
-                dfadf -->
-<!--                 <div class="value-group">
-                  <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" ng-repeat="x in [] | range: 3">
-                </div>
-                <div class="value-group">
-                  <input type="text" name="{{item.value | replaceSpace}}-{{3+x}}" ng-repeat="x in [] | range: 3">
-                </div> -->
-                <!-- </div> -->
-                <table class="metric__info">
-                  <tr>
-                    <td>Dimension #{{$index + 1}}:</td>
-                    <td>
-                      <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="metric.evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Values:</td>
-                    <td>
-                      <!-- <div class="value-item" ng-repeat="x in [] | range: 6"> -->
-                      <div>
-                        <!-- <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}"> -->
-                        <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" ng-repeat="x in [] | range: 3"> 
-                        <br>
-                        <input type="text" name="{{item.value | replaceSpace}}-{{3+x}}" ng-repeat="x in [] | range: 3">
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </li>
-            </ul>
+      <div class="form-group value-wrap">
+        <div class="row">
+          <div class="col-xs-3 col-md-3">List topic:</div>
+          <div class="col-xs-9 col-md-9">Ways to use a brick</div>
+        </div>
+        <div ng-repeat="item in metric.valueList">
+          <div class="row">
+            <div class="col-sm-3 col-md-3">Dimension #{{$index + 1}}:</div>
+            <div class="col-sm-9 col-md-9">
+              <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="metric.evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-md-3">Values:</div>
+            <div class="col-sm-9 col-md-9">
+            <div>
+              <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" ng-repeat="x in [] | range: 3" size="15">
+            </div>
+            <div>
+              <input type="text" name="{{item.value | replaceSpace}}-{{3+x}}" ng-repeat="x in [] | range: 3" size="15">
+            </div>
+            </div>  
+          </div>
+        </div>
           </div>
         </div>
       </div>
