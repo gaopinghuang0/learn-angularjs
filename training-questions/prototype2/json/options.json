@@ -1,0 +1,18 @@
+[
+  {
+    "text": "The values are not high-level (i.e. too fine grained)",
+    "id": 1
+  },
+  {
+    "text": "The values are incomplete or with overlapping",
+    "id": 2
+  },
+  {
+    "text": "The values are not with the same level of detail.",
+    "id": 3
+  },
+  {
+    "text": "The dimension itself is not a valid dimension",
+    "id": 4
+  }
+]

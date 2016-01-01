@@ -1,0 +1,29 @@
+[
+  {
+    "topic": "ways to use magnifying glass",
+    "dimension": "color",
+    "values": ["red", "blue", "lawngreen"],
+    "id": 50223456,
+    "solutions": [
+        {"id": "3", "reason": "Wrong because ..."}
+    ]
+  },
+  {
+    "topic": "short basis for a fairy tale",
+    "dimension": "species of animal characters",
+    "values": ["dachshund", "bald eagle", "Angus cattle"],
+    "id": 50223457,
+    "solutions": [
+        {"id": "1", "reason": "Wrong because ..."}
+    ]
+  },
+  {
+    "topic": "party activities",
+    "dimension": "duration of activity",
+    "values": ["< 1 hour", "1~2 hours"],
+    "id": 50223458,
+    "solutions": [
+        {"id": "2", "reason": "Wrong because ..."}
+    ]
+  }
+]

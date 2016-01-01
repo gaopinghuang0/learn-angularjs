@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Training questions</title>
+
+  <!-- Bootstrap v3.0.3 -->
+  <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Vender libraries -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+  <style type="text/css">
+  dl {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .panel-body p {
+    margin: 5px 0 0;
+  }
+  .progress-table td {
+      padding: 0 10px 0 20px;
+    }
+    .progress-table tr td:last-child {
+      color: #008000;
+    }
+    .current-progress {
+      color: #32CD32 !important;
+    }
+/*    .training__info {
+      border-collapse: collapse;
+    }*/
+    .training-view {
+      border: 1px solid grey;
+      background-color: #F0FFF0;
+      border-radius: 3px;
+    }
+    .training__info td {
+      padding: 5px 10px;
+    }
+    .training__info tr td:first-child {
+      font-weight: bold;
+      text-align: right;
+      vertical-align: top;
+    }
+    
+    .training__options {
+      margin-top: 10px;
+    }
+    .training__options-option label {
+      cursor: pointer;
+    }
+
+    .ideaWrapper {
+      padding-left: 30px;
+      background-color: #eee; 
+    }
+    .ideaWrapper li {
+      padding: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+    .ideaWrapper2 {
+      background-color: #eee;
+    }
+    .form-group {
+      min-width: 370px;
+    }
+    .form-group select, .form-group input {
+      height: 30px;
+      padding-left: 5px;
+    }
+    .warning { color: red; }
+    .value-wrap { margin-left: -10px;}
+    .sub-header { padding-top: 15px; padding-bottom: 5px;}
+  </style>
+</head>
+
+<body ng-app="myApp">
+
+  <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+    <div class="row col-xs-12 col-md-12">
+
+      <!-- Instructions -->
+      <div class="instruction-view">
+        <div class="panel panel-default">
+          <div class="panel-heading"></div>
+          <div class="panel-body">
+          <p>We have been creating a huge list of the following:</p>
+          <dl class="dl-horizontal">
+            <dt>List topic:</dt>
+            <dd>activities to do on a rainy day</dd>
+          </dl>
+          <p>Before you begin, it might help to understand a bit about our process. There are three steps:</p>
+          <table class="progress-table">
+            <tr>
+              <td>1. Enter list items. </td>
+              <td>&lt;&lt;&lt;&lt;&lt;&lt; other workers already did this</td>
+            </tr>
+            <tr>
+              <td>2. Think of some ways we could categorize the list items.</td>
+              <td class="current-progress">&lt;&lt;&lt;&lt;&lt;&lt; YOUR JOB</td>
+            </tr>
+            <tr>
+              <td>3. Categorize the list items. </td>
+              <td>&lt;&lt;&lt;&lt;&lt;&lt; future workers</td>
+            </tr>
+          </table>
+  
+          <p>Your job in this HIT is to think of some dimensions and values that could be used to categorize items in the list. Some sample list items will be shown (below the mini-tutorial).</p>
+
+
+          </div>
+        </div>
+        <!-- End Instructions --><!-- Content Body -->
+      </div>
+
+      <main class="main" ng-controller="MainCtrl">
+        <div class="certificate-view"></div>
+        <div class="training-view">
+          <training></training>
+        </div>
+        <div class="metric-view" style="display:none; opacity: 0;">
+          <metric></metric>
+        </div>
+      </main>
+    </div>
+
+  </section>
+
+  <!-- Application Files -->
+  <script src="js/app.js"></script> 
+  <script src="js/controllers/MainCtrl.js"></script>  
+  <script src="js/factories/MetricFactory.js"></script>  
+  <script src="js/factories/TrainingFactory.js"></script>  
+  <script src="js/directives/MetricDrctv.js"></script> 
+  <script src="js/directives/TrainingDrctv.js"></script>
+
+</body>
+</html>
