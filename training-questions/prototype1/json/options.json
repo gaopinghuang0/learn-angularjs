@@ -10,5 +10,9 @@
   {
     "text": "The values are not with the same level of detail.",
     "id": 3
+  },
+  {
+    "text": "The dimension itself is not a valid dimension",
+    "id": 4
   }
 ]
