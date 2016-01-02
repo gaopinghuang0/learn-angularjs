@@ -46,7 +46,8 @@ angular.module('myApp')
 		}
 
 		$scope.passTraining = function() {
-			$scope.switchView(StatusEnum.CURRENT_PASS);
+			// $scope.switchView(StatusEnum.CURRENT_PASS);
+			$('#toggle-tutorial').click();
 			//TODO: save to database
 		}
 
@@ -113,5 +114,5 @@ angular.module('myApp')
 			obj.addClass(new_class);
 		}
 
-		
+
 	});

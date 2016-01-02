@@ -5,10 +5,10 @@
     "values": ["red", "blue", "lawngreen"],
     "id": 50223456,
     "solutions": [
-        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "4", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "4", "answer": "false", "reason": "Sorry, it's incorrect!"}
     ]
   },
   {
@@ -17,10 +17,10 @@
     "values": ["dachshund", "bald eagle", "Angus cattle"],
     "id": 50223457,
     "solutions": [
-        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "4", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "4", "answer": "false", "reason": "Sorry, it's incorrect!"}
     ]
   },
   {
@@ -29,10 +29,10 @@
     "values": ["< 1 hour", "1~2 hours"],
     "id": 50223458,
     "solutions": [
-        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "4", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "4", "answer": "false", "reason": "Sorry, it's incorrect!"}
     ]
   }
 ]

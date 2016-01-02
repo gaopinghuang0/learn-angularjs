@@ -5,9 +5,9 @@
     "values": ["gray", "tan", "beige", "burlywood"],
     "id": 50223456,
     "solutions": [
-        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"},
         {"id": "4", "answer": "false", "reason": "Sorry, it's incorrect!"}
     ]
   },
@@ -17,9 +17,9 @@
     "values": ["dog", "cat", "cow", "fox"],
     "id": 50223457,
     "solutions": [
-        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"},
         {"id": "4", "answer": "false", "reason": "Sorry, it's incorrect!"}
     ]
   },
@@ -29,9 +29,9 @@
     "values": ["short term", "long term", "about 3 hours"],
     "id": 50223458,
     "solutions": [
-        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
-        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"},
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"},
         {"id": "4", "answer": "false", "reason": "Sorry, it's incorrect!"}
     ]
   }

@@ -30,6 +30,7 @@ angular.module('myApp')
 								self.questions = TrainingFactory.questions;
 							})
 						$scope.show = false;
+						$(window).scrollTop(0);
 					}
 				};
 
@@ -43,41 +44,31 @@ angular.module('myApp')
 						this.options = TrainingFactory.options;
 					}));
 
-				this.checkQuestion = function(quesID, optionID, isChecked) {
-					var result = {_class: "", content: ""},
+				this.checkQuestion = function(quesID, optionID, checkValue) {
+					var result = {},
 						question, matched;
 
 					question = this.questions.filter(function(obj) {
 						return 'id' in obj && parseInt(obj.id) === parseInt(quesID);
 					});
 
-					if (question.length) {
+					if (question.length && (typeof checkValue !== 'undefined')) {
 						matched = question[0].solutions.filter(function(obj) {
 							return 'id' in obj && parseInt(obj.id) === parseInt(optionID);
 						});
 
-						if (matched.length) {  // should be checked
-							if (isChecked) {
-								result._class = "alert alert-success";
-								result.content = "Well done!";
-								result.pass = true;
-							} else {
-								result._class = "alert alert-danger";
-								result.content = matched[0].reason;
-								result.pass = false;
-							}
-						} else {  // should not be checked
-							if (isChecked) {
-								result._class = "alert alert-danger";
-								result.content = "Sorry, it's incorrect!";
-								result.pass = false;
-							} else {
-								result._class = "alert alert-success";
-								result.content = "Well done!";
-								result.pass = true;
-							}
+						if (matched.length && matched[0].answer === checkValue) {
+							result._class = "alert alert-success";
+							result.content = "Well done!";
+							result.pass = true;
+
+							return result;
 						}
-					}
+					} 
+
+					result._class = "alert alert-danger";
+					result.content = "Sorry, it's incorrect!";
+					result.pass = false;
 
 					return result;
 				}
@@ -89,13 +80,13 @@ angular.module('myApp')
 					element.find(".training__options").each(function(ind, val) {
 						var quesID = $(this).attr("data-ques-id");
 						$(this).find(".training__options-option").each(function(index, value) {
-							var checkbox = $(this).find(".training__options-checkbox"),
-								isChecked = checkbox.prop("checked"),
-								optionID = checkbox.attr("data-option-id"),
+							var radiobox = $(this).find(".training__options-radio:checked"),
+								optionID = radiobox.attr("data-option-id"),
+								checkValue = radiobox.val(),
 								comment = $(this).find(".comment-content"), 
 								result;
-							
-							result = ctrl.checkQuestion(quesID, optionID, isChecked);
+
+							result = ctrl.checkQuestion(quesID, optionID, checkValue);
 							isPassed = isPassed && result.pass;
 							// remove existing classes startsWith "alert"
 							scope.switchAlertClass(comment, result._class);
