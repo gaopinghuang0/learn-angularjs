@@ -83,6 +83,9 @@
     .mark-wrong {
       color: red;
     }
+    .training__actions {
+      margin-bottom: 10px;
+    }
 
 
     /* metric */
@@ -98,32 +101,25 @@
     .ideaWrapper li {
       padding: 5px;
     }
-/*    .metric__info li {
-      padding-top: 5px;
-    }
-    .metric__info td {
-      padding: 5px 10px;
-    }
-    .metric__info tr td:first-child {
-      font-weight: bold;
-      text-align: right;
-      vertical-align: top;
-    }*/
     .value-wrap {
       min-width: 370px;
     }
     .value-wrap select, .value-wrap input {
       height: 30px;
       padding-left: 5px;
+      padding-right: 5px;
     }
-    .value-wrap .row {
-      margin-top: 10px;
+    .metric .row {
+      margin: 10px 0;
     }
 
     .warning { color: red; }
     .sub-header { padding-top: 15px; padding-bottom: 5px;}
     .value-item {
       display: inline-block;
+    }
+    .strong {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -141,7 +137,7 @@
             <p>We have been creating a huge list of the following:</p>
             <dl class="dl-horizontal">
               <dt>List topic:</dt>
-              <dd>activities to do on a rainy day</dd>
+              <dd>ways to use a brick</dd>
             </dl>
             <p>Before you begin, it might help to understand a bit about our process. There are three steps:</p>
             <table class="progress-table">
@@ -168,7 +164,7 @@
       </div>
 
       <main class="main" ng-controller="MainCtrl">
-        <div class="certificate-view"></div>
+        <div class="certificate-view" ng-hide="true"></div>
         <div class="training-view">
           <training></training>
         </div>

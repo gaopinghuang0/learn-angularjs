@@ -8,7 +8,7 @@
   </ul>
 
   <p>Lower left are some sample list items for the given list topic.</p>
-  <p>Enter 3 dimensions and corresponding values on the right. Each input should be concise (less than 4 words).</p>
+  <p>Enter 3 dimensions and corresponding values that future workers could use to categorize the list items. Each input should be concise (less than 4 words).</p>
   <div class="row">
     <div class="col-xs-3 col-md-3 ideaWrapper">
       <div class="middle-header">Sample list items</div>
@@ -21,25 +21,27 @@
     <div class="col-xs-9 col-md-9">
       <div class="form-group value-wrap">
         <div class="row">
-          <div class="col-xs-3 col-md-3">List topic:</div>
+          <div class="col-xs-3 col-md-3 strong">List topic:</div>
           <div class="col-xs-9 col-md-9">Ways to use a brick</div>
         </div>
         <div ng-repeat="item in metric.valueList">
           <div class="row">
-            <div class="col-sm-3 col-md-3">Dimension #{{$index + 1}}:</div>
+            <div class="col-sm-3 col-md-3 strong">Dimension #{{$index + 1}}:</div>
             <div class="col-sm-9 col-md-9">
               <input type="text" name="value-input-{{$index}}" size="20" ng-model="item.value" ng-change="metric.evaluate(item)" required><span class="warning" ng-show="!item.valid"> Your answer is too long.</span>
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-3 col-md-3">Values:</div>
+            <div class="col-sm-3 col-md-3 strong">Values:</div>
             <div class="col-sm-9 col-md-9">
-            <div>
-              <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" ng-repeat="x in [] | range: 3" size="15">
+            <div class="row" style="margin: 0">
+              <div class="col-sm-4" ng-repeat="x in [] | range: 6" style="padding: 0 5px 5px 0;">
+                <input type="text" name="{{item.value | replaceSpace}}-{{x}}" ng-required="{{x<2}}" style="width: 100%;">
+              </div>
             </div>
-            <div>
+<!--             <div>
               <input type="text" name="{{item.value | replaceSpace}}-{{3+x}}" ng-repeat="x in [] | range: 3" size="15">
-            </div>
+            </div> -->
             </div>  
           </div>
         </div>

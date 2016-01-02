@@ -5,7 +5,10 @@
     "values": ["red", "green"],
     "id": 50223456,
     "solutions": [
-        {"id": "2", "reason": "Wrong because ..."}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "4", "answer": "true", "reason": "Sorry, it's incorrect!"}
     ]
   },
   {
@@ -14,7 +17,10 @@
     "values": ["vertebrates", "invertebrates", "inserts", "fish"],
     "id": 50223457,
     "solutions": [
-        {"id": "3", "reason": "Wrong because ..."}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "4", "answer": "true", "reason": "Sorry, it's incorrect!"}
     ]
   },
   {
@@ -23,7 +29,10 @@
     "values": ["30 mins", "3 hours", "5 hours"],
     "id": 50223458,
     "solutions": [
-        {"id": "1", "reason": "Wrong because ..."}
+        {"id": "1", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "2", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "3", "answer": "true", "reason": "Sorry, it's incorrect!"}
+        {"id": "4", "answer": "true", "reason": "Sorry, it's incorrect!"}
     ]
   }
 ]
